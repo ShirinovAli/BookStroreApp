@@ -1,0 +1,33 @@
+﻿@model Entity.Dtos.ProductDetailDto
+@{
+    ViewData["Title"] = "Details";
+}
+
+@if (Model == null)
+{
+    @await Html.PartialAsync("_noProducts")
+}
+else
+{
+    <div class="col-12">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="~/assets/images/@Model.ImagePath" class="img-fluid rounded-start" alt="photo">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.ProductName</h5>
+                        <p class="card-text">@Model.AuthorName</p>
+                        <p class="card-text">@Model.PublisherName</p>
+                        <p class="card-text">@Model.GenreName</p>
+                        <p class="card-text">@Model.Description</p>
+                        <p class="card-text">@Model.UnitPrice</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

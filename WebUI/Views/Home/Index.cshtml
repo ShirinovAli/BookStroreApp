@@ -1,0 +1,9 @@
+﻿@model List<Entity.Dtos.ProductDetailDto>
+
+@{ ViewData["Title"] = "Home Page"; }
+
+<div class="col-12">
+    <div class="row">
+        @await Html.PartialAsync("_products", Model)
+    </div>
+</div>

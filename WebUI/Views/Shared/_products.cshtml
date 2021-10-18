@@ -1,0 +1,21 @@
+﻿@model List<Entity.Dtos.ProductDetailDto>
+
+@foreach (var product in Model)
+{
+    <div class="col-4">
+        <div class="card">
+            <img src="~/assets/images/@product.ImagePath" class="card-img-top" alt="photo">
+            <div class="card-body">
+                <h5 class="card-title">
+                    @product.ProductName
+                </h5>
+                <h5 class="card-title">
+                    @product.AuthorName
+                </h5>
+                <p class="card-text">@product.UnitPrice</p>
+                <a asp-action="Details" asp-controller="Products" asp-route-id="@product.ProductId" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div>
+}
+

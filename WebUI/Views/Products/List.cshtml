@@ -1,0 +1,20 @@
+﻿@model Core.Utilities.Results.Abstract.IDataResult<List<Entity.Dtos.ProductDetailDto>>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+@if (Model.Data == null)
+{
+    @await Html.PartialAsync("_noProducts")
+}
+else
+{
+    <div class="row">
+        @await Html.PartialAsync("_products",Model.Data)
+    </div>
+}
+
+@section Genres{
+    @await Component.InvokeAsync("Genres")
+}

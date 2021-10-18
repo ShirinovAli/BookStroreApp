@@ -1,0 +1,10 @@
+﻿@model List<Entity.Concrete.Genre>
+
+<div class="list-group">
+    @foreach (var genre in Model)
+    {
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            @genre.GenreName
+        </a>
+    }
+</div>
