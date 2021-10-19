@@ -1,21 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
-namespace WebUI.Controllers
+namespace WebUI.Components
 {
-    public class PublishersController : Controller
+    public class PublishersViewComponent : ViewComponent
     {
         private IPublisherService _publisherService;
 
-        public PublishersController(IPublisherService publisherService)
+        public PublishersViewComponent(IPublisherService publisherService)
         {
             _publisherService = publisherService;
         }
-        public async Task<IActionResult> List()
+
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var publishers = await _publisherService.GetAllAsync();
             return View(publishers.Data);

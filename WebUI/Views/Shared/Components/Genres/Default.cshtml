@@ -1,9 +1,10 @@
 ﻿@model List<Entity.Concrete.Genre>
 
 <div class="list-group">
+    <h5>Filter by Genre</h5>
     @foreach (var genre in Model)
     {
-        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+        <a asp-action="List" asp-controller="Products" asp-route-genreId="@genre.GenreId" class="list-group-item list-group-item-action" aria-current="true">
             @genre.GenreName
         </a>
     }

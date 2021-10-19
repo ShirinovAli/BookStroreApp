@@ -89,5 +89,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(await _productDal.GetAllProductDetailsAsync());
         }
 
+        public async Task<IDataResult<List<ProductDetailDto>>> GetAllProductByProductName(string productName)
+        {
+            return new SuccessDataResult<List<ProductDetailDto>>(
+                await _productDal.GetAllProductDetailsAsync(
+                    p => p.ProductName.ToLower().Contains(productName.ToLower())));
+        }
     }
 }

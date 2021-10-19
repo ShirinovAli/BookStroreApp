@@ -1,0 +1,11 @@
+﻿@model List<Entity.Concrete.Publisher>
+
+<div class="list-group mt-5">
+    <h5>Filter by Publisher Name</h5>
+    @foreach (var publisher in Model)
+    {
+        <a asp-action="List" asp-controller="Products" asp-route-publisherId="@publisher.PublisherId" class="list-group-item list-group-item-action" aria-current="true">
+            @publisher.PublisherName
+        </a>
+    }
+</div>

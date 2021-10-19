@@ -17,13 +17,14 @@ else
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">@Model.ProductName</h5>
-                        <p class="card-text">@Model.AuthorName</p>
-                        <p class="card-text">@Model.PublisherName</p>
-                        <p class="card-text">@Model.GenreName</p>
-                        <p class="card-text">@Model.Description</p>
-                        <p class="card-text">@Model.UnitPrice</p>
+                        <h3 class="card-title">@Model.ProductName</h3>
+                        <p class="card-text"><span style="font-weight: bold">Author</span> : @Model.AuthorName</p>
+                        <p class="card-text"><span style="font-weight: bold">Publisher</span> : @Model.PublisherName</p>
+                        <p class="card-text"><span style="font-weight: bold">Genre</span> : @Model.GenreName</p>
+                        <p class="card-text"><span style="font-weight: bold">Description</span> : @Model.Description</p>
+                        <p class="card-text"><span style="font-weight: bold">Price</span> : @Model.UnitPrice $</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <button type="button" class="btn btn-primary">Add to Cart</button>
                     </div>
                 </div>
             </div>

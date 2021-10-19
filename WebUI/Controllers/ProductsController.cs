@@ -15,9 +15,28 @@ namespace WebUI.Controllers
         {
             _productService = productService;
         }
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> List(int genreId, int publisherId, int authorId, string query)
         {
             var products = await _productService.GetAllProductDetailsAsync();
+            if (genreId != 0)
+            {
+                products = await _productService.GetAllProductByGenreIdAsync(genreId);
+            }
+
+            if (publisherId != 0)
+            {
+                products = await _productService.GetAllProductByPublisherIdAsync(publisherId);
+            }
+
+            if (authorId != 0)
+            {
+                products = await _productService.GetAllProductByAuthorIdAsync(authorId);
+            }
+
+            if (query != null)
+            {
+                products = await _productService.GetAllProductByProductName(query);
+            }
             return View(products);
         }
 

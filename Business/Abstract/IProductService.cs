@@ -16,6 +16,7 @@ namespace Business.Abstract
         Task<IDataResult<List<ProductDetailDto>>> GetAllProductByPublisherIdAsync(int publisherId);
         Task<IDataResult<List<ProductDetailDto>>> GetAllProductByProductImageIdAsync(int productImageId);
         Task<IDataResult<List<ProductDetailDto>>> GetAllProductByUnitPriceAsync(decimal min, decimal max);
+        Task<IDataResult<List<ProductDetailDto>>> GetAllProductByProductName(string productName);
         Task<IDataResult<List<ProductDetailDto>>> GetAllProductDetailsAsync();
         IDataResult<ProductDetailDto> GetProductDetails(int productId);
     }

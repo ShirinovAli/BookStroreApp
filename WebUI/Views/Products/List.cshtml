@@ -4,17 +4,25 @@
     ViewData["Title"] = "List";
 }
 
-@if (Model.Data == null)
+@if (Model.Data.Count == 0)
 {
     @await Html.PartialAsync("_noProducts")
 }
 else
 {
     <div class="row">
-        @await Html.PartialAsync("_products",Model.Data)
+        @await Html.PartialAsync("_products", Model.Data)
     </div>
 }
 
 @section Genres{
     @await Component.InvokeAsync("Genres")
+}
+
+@section Publishers{
+    @await Component.InvokeAsync("Publishers")
+}
+
+@section Authors{
+    @await Component.InvokeAsync("Authors")
 }
